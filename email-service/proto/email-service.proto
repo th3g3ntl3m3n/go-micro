@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package emailservice;
+
+option go_package = "./proto;emailservice";
+
+service EmailService {
+	rpc Get(UserRequest) returns (EmailResponse) {}
+}
+
+message UserRequest {
+	string id = 1;
+}
+
+message EmailResponse {
+	string email = 1;
+}
