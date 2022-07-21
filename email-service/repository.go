@@ -6,14 +6,14 @@ type EmailRepository struct {
 	DB EmailsDB
 }
 
-func New(DB EmailsDB) *EmailRepository {
+func NewEmailRepository(DB EmailsDB) *EmailRepository {
 	return &EmailRepository{DB}
 }
 
 type Repository interface {
-	GetByUserID(id string) *Email
+	GetByUserID(id string) string
 }
 
-func (repo *EmailRepository) GetByUserID(id string) *Email {
+func (repo *EmailRepository) GetByUserID(id string) string {
 	return repo.DB[id]
 }

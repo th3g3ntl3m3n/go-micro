@@ -14,10 +14,12 @@ func main() {
 	)
 
 	db := make(EmailsDB)
+	db["1"] = "vikas@test.com"
+	db["2"] = "vikas@url.com"
 	emailRepo := NewEmailRepository(db)
 
 	// Register handler
-	pb.RegisterEmailServiceHandler(srv.Server(), NewEmailHandler())
+	pb.RegisterEmailServiceHandler(srv.Server(), NewEmailHandler(emailRepo))
 
 	// Run service
 	if err := srv.Run(); err != nil {
