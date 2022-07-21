@@ -26,10 +26,12 @@ func (e *UserService) Get(ctx context.Context, in *pb.GetRequest, rsp *pb.UserRe
 
 	resp, err := e.emailClient.Get(ctx, &emailPb.UserRequest{Id: user.ID})
 	if err != nil {
-		return fmt.Errorf("Error calling emailclient")
+		return fmt.Errorf("error calling emailclient")
 	}
+
 	rsp.Id = user.ID
 	rsp.Name = user.Name
 	rsp.Email = resp.Email
+
 	return nil
 }

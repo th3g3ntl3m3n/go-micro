@@ -17,6 +17,9 @@ func main() {
 	emailClient := emailPb.NewEmailService("email-service", srv.Client())
 
 	db := make(UsersDB)
+	db["1"] = &User{ID: "1", Name: "Vikas"}
+	db["2"] = &User{ID: "2", Name: "Test 2"}
+
 	userRepo := New(db)
 
 	// Register handler
