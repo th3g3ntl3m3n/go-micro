@@ -1,4 +1,4 @@
-module github.com/th3g3ntl3m3n/Cleartoo/user-service
+module github.com/th3g3ntl3m3n/go-micro/user-service
 
 go 1.18
 
