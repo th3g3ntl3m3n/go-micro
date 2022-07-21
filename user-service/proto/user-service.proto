@@ -15,5 +15,5 @@ message GetRequest {
 message UserResponse {
 	string id = 1;
 	string name = 2;
-	string date_of_birth = 3;
+	string email = 3;
 }
